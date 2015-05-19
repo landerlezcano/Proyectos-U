@@ -121,11 +121,7 @@ public class RungeKupta {
         }
         return aux1;
     }
-
-    
-
     public double calcularfx(double x, double y, double z, DoubleFunction func) {
         return func.apply(x, y, z);
     }
-    
 }

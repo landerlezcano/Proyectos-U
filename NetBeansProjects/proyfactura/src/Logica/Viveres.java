@@ -7,34 +7,70 @@
 package Logica;
 
 /**
- *
- * @author USUARIO
+ * Clase que define el Objeto Viveres
+ * @author Sebastian Gil
+ * @version 1.0
  */
 public class Viveres extends Producto {
-    private double IvaV;
+    /**
+    * Declaracion de Atributos
+    */
+    private double IvaViveres;
 
-    public Viveres(double IvaV, String Cod, String Nombre, double cantudad, double valoru) {
-        super(Cod, Nombre, cantudad, valoru);
-        this.IvaV = IvaV;
+    /**
+     * Constructo Párametrico
+     * @param Codigo
+     * @param Nombre
+     * @param Cantidad
+     * @param Valor_Unidad
+     */
+    public Viveres(String Codigo, String Nombre, int Cantidad, double Valor_Unidad) {
+        super(Codigo, Nombre, Cantidad, Valor_Unidad);
+        this.IvaViveres = 0.10;
     }
     
+    /**
+     *Constructor Básico
+     */
     public Viveres() {
         super();
-        this.IvaV = 0.10;
+        this.IvaViveres = 0.10;
     }
 
-    public double getIvaV() {
-        return IvaV;
+    /**
+     *Metodo que obtiene y retorna el contenido del Atributo IvaViveres
+     * @return Double
+     */
+    public double getIvaViveres() {
+        return IvaViveres;
     }
 
-    public void setIvaV(double IvaV) {
-        this.IvaV = IvaV;
+    /**
+     * Metodo que recibe un párametro y se le Asigna a el atributo IvaViveres del objeto
+     * @param IvaViveres
+     */
+    public void setIvaViveres(double IvaViveres) {
+        this.IvaViveres = IvaViveres;
+    }
+/**
+* Metodo que retorna el contenido del objeto Viveres
+* @return String
+*/
+    @Override
+    public String toString() {
+        return super.toString();//super.ToString() Retorna los Datos Heredados
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "\nIva = " + IvaV ;
+    public double SubT() {
+        return this.getCantidad() * this.getValor_Unidad();
     }
+
+    @Override
+    public double IvaP() {
+        return this.getIvaViveres() * this.SubT();
+    }
+    
     
     
 }

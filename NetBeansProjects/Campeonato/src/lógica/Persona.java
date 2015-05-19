@@ -44,6 +44,8 @@ public abstract class Persona {
         return "Ocupación: Persona\n"+"\nNombre: "+this.nombre+"\nID: "+this.id;
     }
     
-    
+    public Object[] toObjArray(){
+        return new Object[]{this.nombre,this.id,this.getClass().toString()};
+    }
     
 }

@@ -1,0 +1,12 @@
+function q = rrkk(xx,yy,x,y,t,h)
+u1=h*eval('xx(t,x,y)');
+v1=h*eval('yy(t,x,y)');
+u2=h*eval('xx(t+h/2,x+u1/2,y+v1/2)');
+v2=h*eval('yy(t+h/2,x+u1/2,y+v1/2)');
+u3=h*eval('xx(t+h/2,x+u2/2,y+v2/2)');
+v3=h*eval('yy(t+h/2,x+u2/2,y+v2/2)');
+u4=h*eval('xx(t+h,x+u3,y+v3)');
+v4=h*eval('yy(t+h,x+u3,y+v3)');
+xx1=x+(1/6)*(u1+2*u2+2*u3+u4);
+yy1=y+(1/6)*(v1+2*v2+2*v3+v4);
+q = [xx1,yy1];

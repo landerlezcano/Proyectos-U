@@ -7,34 +7,61 @@
 package Logica;
 
 /**
- *
- * @author USUARIO
+ * Clase que define el Objeto Empleado
+ * @author Sebastian Gil
+ * @version 1.0 
  */
 public class Empleado extends Persona {
-    private String Cod;
+    /**
+     * Declaracion de Atributos
+    */ 
+    private String Codigo;
 
-    public Empleado(String Cod, String id, String nombre) {
-        super(id, nombre);
-        this.Cod = Cod;
+    /**
+     * Constructor Párametrico
+     * @param Codigo
+     * @param Nombre
+     * @param ID
+     */
+    public Empleado(String Codigo, String Nombre, String ID) {
+        super(Nombre, ID);
+        this.Codigo = Codigo;
     }
     
+    /**
+     * Constructor Básico
+     */
     public Empleado() {
         super();
-        this.Cod = "";
+        this.Codigo = "";
     }
 
-    public String getCod() {
-        return Cod;
+    /**
+     * Metodo que obtiene y retorna el contenido del Atributo Codigo
+     * @return String
+     */
+    public String getCodigo() {
+        return Codigo;
     }
 
-    public void setCod(String Cod) {
-        this.Cod = Cod;
+    /**
+     * Metodo que recibe un párametro y se le Asigna a el atributo Codigo del objeto 
+     * @param Codigo
+     */
+    public void setCodigo(String Codigo) {
+        this.Codigo = Codigo;
     }
-
+/**
+* Metodo que retorna el contenido del objeto Empleado
+* @return String
+*/
     @Override
     public String toString() {
-        return super.toString() + "\nCodigo = " + Cod ;
+        return  super.toString() + "\nCodigo = " + Codigo + "\n";//super.ToString() Retorna los Datos Heredados
     }
+    
+    
+    
     
     
 }

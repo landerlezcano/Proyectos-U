@@ -7,34 +7,72 @@
 package Logica;
 
 /**
- *
- * @author estudiante
+ * Clase que define el Objeto Cliente
+ * @author Sebastian Gil
+ * @version 1.0
  */
-public class Cliente extends Persona{
-    private String tel;
-
-    public Cliente(String tel, String id, String nombre) {
-        super(id, nombre);
-        this.tel = tel;
-    }
+public class Cliente extends Persona {
+    /**
+     * Declaracion Atributos 
+    */
+    private String Direccion,Telefono;
     
+    /**Constructor Paramétrico
+     * @param Direccion
+     * @param Telefono
+     * @param Nombre
+     * @param ID
+     */
+    public Cliente(String Direccion, String Telefono, String Nombre, String ID) {
+        super(Nombre, ID);
+        this.Direccion = Direccion;
+        this.Telefono = Telefono;
+    }
+    /** Constructor Basico que crea un objeto Cliente con datos nulos */
     public Cliente() {
         super();
-        this.tel = "";
+        this.Direccion = "";
+        this.Telefono = "";
     }
-
-    public String getTel() {
-        return tel;
+    /**
+    * Metodo que obtiene y retorna el contenido del Atributo Direccion
+    * @return String
+    */
+    public String getDireccion() {
+        return Direccion;
     }
-
-    public void setTel(String tel) {
-        this.tel = tel;
+    /**
+    * Metodo que recibe un párametro de tipo String y se le Asigna a el atributo Direccion del objeto 
+     * @param Direccion
+    */  
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
     }
-
+    /**
+    * Metodo que obtiene y retorna el contenido del Atributo 
+    * @return String
+    */ 
+    public String getTelefono() {
+        return Telefono;
+    }
+    /**
+    * Metodo que recibe un párametro de tipo String y se le Asigna a el atributo Telefono del objeto
+     * @param Telefono
+    */ 
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
+    }
+    
+   /**
+   * Metodo que retorna el contenido del objeto Cliente
+   * @return String
+   */
     @Override
     public String toString() {
-        return super.toString()+ "\nTelefono = " + tel;
+        return  "Cliente :\n" + super.toString() + "\nDireccion : " + Direccion + "\nTelefono : " + Telefono + "\n"; //super.ToString() Retorna los Datos Heredados
     }
+    
+    
     
     
 }

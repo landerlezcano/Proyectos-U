@@ -106,7 +106,7 @@ public class RungeKupta {
         }
         System.out.println("   " + numIteraciones);
         return yi[yi.length - 1];
-    };
+    }
 
     public double[] llenarxi(double x0, double xf, double h) {
         double[] aux1 = new double[(int) numIteraciones];
@@ -122,10 +122,10 @@ public class RungeKupta {
         return aux1;
     }
 
-    ;
+    
 
     public double calcularfx(double x, double y, double z, DoubleFunction func) {
         return func.apply(x, y, z);
     }
-;
+    
 }

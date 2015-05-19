@@ -62,5 +62,7 @@ public class Equipo {
         return aux;
     }
     
-    
+    public Object[] toObjArray(){
+        return listaIntegrantes.toArray();
+    }
 }

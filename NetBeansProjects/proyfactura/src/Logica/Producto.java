@@ -7,66 +7,124 @@
 package Logica;
 
 /**
- *
- * @author USUARIO
+ * Clase que define el Objeto Producto
+ * @author Sebastian Gil
+ * @version 1.0
  */
-public class Producto {
-    private String Cod,Nombre;
-    private double cantudad, valoru;
+public abstract class Producto {
+    
+    protected String Codigo,Nombre;
+    protected int Cantidad;
+    protected double Valor_Unidad;
 
-    public Producto(String Cod, String Nombre, double cantudad, double valoru) {
-        this.Cod = Cod;
+    /**
+     * Constructor Párametrico
+     * @param Codigo
+     * @param Nombre
+     * @param Cantidad
+     * @param Valor_Unidad
+     */
+    public Producto(String Codigo, String Nombre, int Cantidad, double Valor_Unidad) {
+        this.Codigo = Codigo;
         this.Nombre = Nombre;
-        this.cantudad = cantudad;
-        this.valoru = valoru;
+        this.Cantidad = Cantidad;
+        this.Valor_Unidad = Valor_Unidad;
     }
     
+    /**
+     * Constructor Básico
+     */
     public Producto() {
-        this.Cod = "";
+        this.Codigo = "";
         this.Nombre = "";
-        this.cantudad = 0;
-        this.valoru = 0;
+        this.Cantidad = 0;
+        this.Valor_Unidad = 0;
     }
 
-    public String getCod() {
-        return Cod;
+    /**
+     * Metodo que obtiene y retorna el contenido del Atributo Codigo
+     * @return
+     */
+    public String getCodigo() {
+        return Codigo;
     }
 
-    public void setCod(String Cod) {
-        this.Cod = Cod;
+    /**
+     * Metodo que recibe un párametro y se le Asigna a el atributo Codigo del objeto 
+     * @param Codigo
+     */
+    public void setCodigo(String Codigo) {
+        this.Codigo = Codigo;
     }
 
+    /**
+     * Metodo que obtiene y retorna el contenido del Atributo Nombre
+     * @return
+     */
     public String getNombre() {
         return Nombre;
     }
 
+    /**
+     * Metodo que recibe un párametro y se le Asigna a el atributo Nombre del objeto 
+     * @param Nombre
+     */
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
 
-    public double getCantudad() {
-        return cantudad;
+    /**
+     * Metodo que obtiene y retorna el contenido del Atributo Cantidad
+     * @return
+     */
+    public int getCantidad() {
+        return Cantidad;
     }
 
-    public void setCantudad(double cantudad) {
-        this.cantudad = cantudad;
+    /**
+     * Metodo que recibe un párametro y se le Asigna a el atributo Cantidad del objeto 
+     * @param Cantidad
+     */
+    public void setCantidad(int Cantidad) {
+        this.Cantidad = Cantidad;
     }
 
-    public double getValoru() {
-        return valoru;
+    /**
+     * Metodo que obtiene y retorna el contenido del Atributo Valor_Unidad
+     * @return
+     */
+    public double getValor_Unidad() {
+        return Valor_Unidad;
     }
 
-    public void setValoru(double valoru) {
-        this.valoru = valoru;
+    /**
+     * Metodo que recibe un párametro y se le Asigna a el atributo Valor_Unidad del objeto 
+     * @param Valor_Unidad
+     */
+    public void setValor_Unidad(double Valor_Unidad) {
+        this.Valor_Unidad = Valor_Unidad;
     }
-
+    
+//    public double SubTotal(){
+//        double SubT = 0;
+//        
+//        SubT = this.getCantidad() * this.getValor_Unidad();
+//        
+//        return SubT;
+//    }
+    
+    public abstract double SubT();
+    public abstract double IvaP();
+    
+/**
+* Metodo que retorna el contenido del objeto Producto
+* @return String
+*/
     @Override
     public String toString() {
-        return "\nCodigo = " + Cod + 
-               "\nNombre = " + Nombre + 
-               "\nCantudad = " + cantudad + 
-               "\nValoru Unitario = " + valoru ;
+        return "\nCodigo : " + Codigo + " --- Nombre : " + Nombre + " --- Cantidad = " + Cantidad + " --- Valor_Unidad = " + Valor_Unidad;
     }
+    
     
     
 }
